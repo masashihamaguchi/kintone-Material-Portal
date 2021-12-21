@@ -8,6 +8,10 @@ kintoneのポータルテンプレートです。
 
 > [kintoneのポータル画面をカスタマイズした話](https://qiita.com/MasashiHamaguchi/items/52312b6a077e474329c5)
 
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/f110ec37-6cfa-e807-5028-e2337240a0aa.png)
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/ea85eb9b-5188-813f-3256-dc3659332d1e.png)
+
 ## ファイル説明
 
 `templates`
@@ -37,9 +41,11 @@ kintoneのポータルテンプレートです。
 
 > [Kintone Portal Designer](https://chrome.google.com/webstore/detail/kintone-portal-designer/kmedncknheiegbelfmcfdlpcpfbnklmo)
 
-githubの`templates`ディレクトリにある[`material-portal.json`]()をダウンロードします。
+githubの`templates`ディレクトリにある[`material-portal.json`](https://github.com/masashihamaguchi/kintone-Material-Portal/blob/master/templates/material-portal.json)をダウンロードします。
 
 Portal Designerのエディター画面を開いて、ImportボタンからダウンロードしたJSONファイルを読み込みます。
+
+<img alt="image.png" width="300" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/f4ecde7b-a3ff-e82b-9c7a-75e7f075d4e8.png">
 
 ※Kintone Portal Designerの使い方については、cybozu developer networkの記事をご覧ください。
 
@@ -101,9 +107,9 @@ kintoneシステム管理設定にある「JavaScript / CSSでカスタマイズ
 
 レコードを追加することで新しいお知らせを追加することができます。
 
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/23adb4aa-cba1-c3a8-5d2a-6d3c8be1683f.png)
+<img alt="image.png" width="300" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/23adb4aa-cba1-c3a8-5d2a-6d3c8be1683f.png">
 
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/ebc75ca9-eb46-962f-5073-405665693f8e.png)![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/cf7a8cb2-ca3b-5dbb-2ec1-0b420f1c17c8.png)
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/cf7a8cb2-ca3b-5dbb-2ec1-0b420f1c17c8.png)
 
 kintoneのポータル画面を開いて、ポータルが正しく表示されていることを確認します。
 
@@ -122,7 +128,7 @@ $('.kintone-portal-designer-html').css('display', 'none');
 
 Portal Designerのエディター画面にあるExportボタンを押して「Export as JavaScript (Desktop)」を選択してカスタマイズ用ファイルダウンロードします。
 
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/d75955a4-57b0-fd46-7145-f0f80b687e2d.png)
+<img alt="image.png" width="300" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/d75955a4-57b0-fd46-7145-f0f80b687e2d.png">
 
 4で設定した「JavaScript / CSSでカスタマイズ」を開いて、カスタマイズ用のファイルをアップロードします。
 
@@ -133,7 +139,6 @@ Portal Designerのエディター画面にあるExportボタンを押して「Ex
 ※表示していも問題はありません。
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/245180/e65438a7-e9f1-e7eb-1cd5-ddedb7614e99.png)
-
 
 ポータル画面を開いて、正しく表示されていたら完成です！
 
