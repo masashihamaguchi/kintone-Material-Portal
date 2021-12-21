@@ -1,0 +1,145 @@
+<!--
+  Copyright (c) 2021 Masashi Hamaguchi
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+-->
+
+<div id="portal" class="portal-base" v-cloak>
+
+    <div id="menu-area">
+        <nav>
+            <div class="flex-menu">
+                <div class="portal-static">
+                    <small>{{ domain }}</small>
+                </div>
+
+                <!-- information -->
+                <div class="portal-info">
+                    <div class="info fuwat">
+                        <p class="date">{{ date }}</p>
+                        <p class="time">{{ time }}</p>
+                        <p class="message">{{ message }}</p>
+                    </div>
+                </div>
+
+                <!-- notice -->
+                <div class="portal-notice">
+                    <div class="notice fuwat">
+                        <h2 class="portal-title">お知らせ</h2>
+                        <ul class="notice-list">
+                            <li v-for="notice in notices">
+                                <div v-if="notice.URL.value != ''">
+                                    <a :href="notice.URL.value" target="_blank">
+                                        <p>
+                                            {{ notice.タイトル.value }}
+                                        </p>
+                                        <small v-if="notice.お知らせ内容.value != ''">
+                                            {{ notice.お知らせ内容.value }}
+                                        </small>
+                                    </a>
+                                </div>
+                                <div v-else>
+                                    <p>
+                                        {{ notice.タイトル.value }}
+                                    </p>
+                                    <small v-if="notice.お知らせ内容.value != ''">
+                                        {{ notice.お知らせ内容.value }}
+                                    </small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- assigned -->
+                <div class="portal-assigned">
+                    <div class="assigned fuwat">
+                        <h2 class="portal-title">未処理アプリ</h2>
+                        <ul class="assigned-list">
+                            <li v-for="app in assignedAppList">
+                                <a :href="`/k/${app.id}/?bview=ASSIGN`" target="_blank">
+                                    <span class="assigned-app-image" :style="'background-image: url(' + app.icon + ');'"></span>
+                                    <span class="assigned-app-name">{{ app.name }}</span>
+                                </a>
+                                <div class="assigned-app-count">
+                                    <span class="assigned-app-count-left"></span>
+                                    <span class="assigned-app-count-center">{{ app.count }}</span>
+                                    <span class="assigned-app-count-right"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="ad-menu">
+                </div>
+            </div>
+        </nav>
+
+        <div v-on:click="onOpenMenu" class="toggle-btn fuwat">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div v-on:click="onOpenMenu" class="toggle-area fuwat">
+
+        </div>
+
+        <div v-on:click="onMask" id="mask"></div>
+    </div>
+
+    <div class="portal-container">
+
+        <div class="flex-info">
+            <!-- information -->
+            <div class="portal-info">
+                <div class="info">
+                    <p class="date fuwat">{{ date }}</p>
+                    <p class="time fuwat">{{ time }}</p>
+                    <p class="message fuwat">{{ message }}</p>
+                </div>
+            </div>
+
+            <!-- app group list -->
+            <div class="portal-list">
+                <div class="list">
+                    <h2 class="portal-title fuwat">アプリグループ</h2>
+                    <div class="widget-list">
+                        <a v-for="(widget, index) in widgets" v-on:click="onScroll(widget.レコード番号.value)" :class="`btn-${getColorClass(widget.ウィジェットカラー.value)} fuwat`">
+                            {{ widget.ウィジェット名.value }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex-apps">
+            <!-- app list -->
+            <div class="portal-main">
+
+                <div v-for="(widget, index) in widgets" :id="'widget' + widget.レコード番号.value" class="portal-widget">
+                    <div class="widget">
+                        <h2 class="portal-title fuwat">{{ widget.ウィジェット名.value }}</h2>
+                        <div class="portal-apps">
+                            <div v-for="app in widget.アプリリスト.value" class="app-box fuwat">
+                                <div :class="`app ${getColorClass(widget.ウィジェットカラー.value)}`">
+                                    <a :href="`/k/${app.value.アプリID.value}/`" :title="app.value.アプリ名.value" target="_blank">
+                                        <span>{{ app.value.アプリID.value }}</span>
+                                        <p>{{ app.value.表示名.value !== '' ? app.value.表示名.value : app.value.アプリ名.value }}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer fuwat">
+        <small>{{ footer }}</small>
+    </footer>
+</div>
