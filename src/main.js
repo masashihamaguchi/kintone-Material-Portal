@@ -134,15 +134,12 @@
 
     const setMenuPosition = function () {
         let toggleBtn = $('.toggle-btn');
-        let nav = $('nav');
         let top = $(window).scrollTop();
         let basePosition = 64;
         if (top <= basePosition) {
             toggleBtn.css('top', `calc((112px - ${top}px) / 2 + 50% - 24px)`);
-            nav.css('margin-top', `${basePosition - top + 48}px`);
         } else {
             toggleBtn.css('top', `calc(24px + 50% - 24px)`);
-            nav.css('margin-top', `48px`);
         }
     }
 
@@ -212,7 +209,7 @@
 
         // administrator menu
         const adminMenu = $('.gaia-argoui-coveroptionmenubutton');
-        adminMenu.appendTo('.gaia-header-toolbar-links');
+        adminMenu.appendTo('.dhOPxC__right .dhOPxC__menu-list');
         adminMenu.css({
             width: "48px",
             height: "48px",

@@ -64,7 +64,7 @@
 /*==========
   Menu Area
 ==========*/
-nav {
+.nav-area {
   display: block;
   position: fixed;
   margin-top: 112px;
@@ -80,7 +80,7 @@ nav {
   z-index: 5;
 }
 
-.open nav {
+.open .nav-area {
   left: 0;
 }
 
@@ -401,15 +401,15 @@ small {
   font-size: 16px;
 }
 
-nav .date {
+.nav-area .date {
   font-size: 24px;
 }
 
-nav .time {
+.nav-area .time {
   font-size: 80px;
 }
 
-nav .message {
+.nav-area .message {
   font-size: 14px;
 }
 
@@ -579,11 +579,11 @@ h3.widget-title {
 /*==========
   Scrollbar
 ==========*/
-html #menu-area nav::-webkit-scrollbar {
+html #menu-area .nav-area::-webkit-scrollbar {
   margin: 0;
 }
 
-html #menu-area nav::-webkit-scrollbar-thumb {
+html #menu-area .nav-area::-webkit-scrollbar-thumb {
   border: solid 5px #FFE49B;
   background-color: #464646;
   border-radius: 10px;
